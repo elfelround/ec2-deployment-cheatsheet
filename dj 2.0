@@ -78,6 +78,10 @@ timeskip
 
 second part https://www.youtube.com/watch?v=15d6jdniYN8
 
+0:57 server_name modified // editing the nginx files
+2:08 // creates a space name on digital ocean
+2:37 // creates "spaces keys" that seem like ssl for digital ocean
+3:03 // cyberduck to do TLS and modify the remote django files, we can see that allowed hosts is set to '*'
 
 #!/bin/bash
 
