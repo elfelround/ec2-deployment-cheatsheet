@@ -2,6 +2,7 @@
 
 https://www.youtube.com/watch?v=08yYjLGWzaM&t=10s
 
+
 2:11 sudo apt-get update
 2:29 sudo apt-get -y upgrade
 2:43 UTF-8
@@ -17,20 +18,32 @@ got tired so i made a skip here
 15:03 adduser <nameofthenewuser>
 15:51 gpasswd -a <nameofthenewuser> sudo //add user to the list of sudo users
 16:09 su - <nameofthenewuser>  //switching to the new user
-timeskip
-21:27 pip3 install django-webpack-loader
+16:23 virtualenv .
+16:40 source bin/activate
+17:06 git clone <bitbucket git, good cause it keeps secret private> //finally, this is the important part i was hoping for *************************
+ls / cd projectname / python manage.py runserver
+18:36 cd .. && alias python=python3  // he doesnt succeed at alias because he is leaving a white space, yet it is good to use it, since we are in a virtualenv i wonder if we are already using python3, id recommend which python before alias command
+19:27 pip3 install django  //pip not yet installed
+19:37 sudo apt-get install python3-pip
+20:52 pip3 install //here we install several packages that he has on the requirements.txt but installs one by one
+django
+djangorestframework
+20:52 django-rest-knox // he uses it for react aplication, no idea what it does
+21:27 pip3 install django-webpack-loader //for react i guess, he says if you dont need it then dont install it
 21:47 pip3 install pillow
-21:57 pip3 install django-cors-headers
+21:57 pip3 install django-cors-headers // to allow cors requests
 22:35 cd project
 python3 manage.py runserver  //didnt work, still mysql unconfigured
 22:43 pip3 install mysqlclient  //seems like this didnt work
 23:36 sudo apt-get install libmysqlclient-dev  //fixing with this
 23:49 pip3 install mysqlclient //trying again now
-23:58 python3 manage.py runserver //trying again with mysql configured﻿
+23:58 python3 manage.py runserver //trying again with mysql configured
+timeskip
 25:55 pip uninstall gunicorn // uninstalls cause he put it onto python 2.7
 26:32 pip3 install gunicorn --install-option"--install-scripts=$PWD/bin"  //extra argument cause he wants it installed in a specific directory that he is in
 27:01 cd ..
 27:02 // he fucked up a 3rd time, making the gunicorn installation on the project folder when he wanted it in root, so he installs it again after the c ..
 27:03 // again installing gunicorn
-
-
+timeskip
+29:06 chmod u+x bin/gunicorn_start
+29:19
