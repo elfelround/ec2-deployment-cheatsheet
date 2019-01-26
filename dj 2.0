@@ -45,5 +45,34 @@ timeskip
 27:02 // he fucked up a 3rd time, making the gunicorn installation on the project folder when he wanted it in root, so he installs it again after the c ..
 27:03 // again installing gunicorn
 timeskip
-29:06 chmod u+x bin/gunicorn_start
-29:19
+29:19 chmod u+x bin/gunicorn_start
+29:26 mkdir run && mkdir logs
+29:50 touch logs/gunicorn-error.log
+30:05 sudo vim /etc/supervisor/conf.d/sres.conf //superviser configuration
+30:51 //copying stuff into that file we opened in vim
+31:23 sudo supervisorctl reread
+31:33 sudo supervisorctl update
+31:56 sudo supervisorctl status <newusername>
+32:22 sudo supervisorctl restart <name>
+32:46 sudo vim /etc/nginx/sites-available/<name> // configuring nginx
+33:13 // copying stuff on vim
+33:36 // changing the ip from the file to our instance public ip
+34:06 // finds the A record on digitalocean
+34:56 sudo ln -s /etc/nginx/sites-available/<name> /etc/nginx/sites-anebled/<projectname> //making symbolic link
+35:55 sudo rm /etc/nginx/sites-enabled/default
+36:00 sudo service nginx restart
+36:50 systemctl status nginx.service  //seems nginx configuration isnt correct
+37:01 nginx -t
+38:07 /usr/sbin/nginx -t
+38:48 //corrects the nginx file, where he put two semicolons by mistae with vim yet again
+39:04 sudo service nginx restart
+40:15 //getting 500 error so he does a $sudo supervisorctl restart <username> $sudo service nginx restart $sudo reboot
+40:55 //ssh connecting again
+41:47 source bin/activate / cd project / python3 manage.py runserver  ctrl c // checking that the server works
+41:55 python manage.py makemigrations 42:23 checking that the migrations folder exists
+42:46 python manage.py migrate
+43:04 python manage.py collectstatic  /fails cause static dir isnt made
+42:23 mkdir static_store // after runs collectstatic again
+
+second part https://www.youtube.com/watch?v=15d6jdniYN8
+
