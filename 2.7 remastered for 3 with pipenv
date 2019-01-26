@@ -24,6 +24,7 @@ cd tfn
 //no source venv/bin/activate
 pip3 install pipenv
 //error here, default pip seems to be upgraded or something
+https://stackoverflow.com/questions/51225750/installation-of-pipenv-causes-pip3-unusable
 pipenv shell
 pip3 install -r requirements.txt
 pip3 install django bcrypt django-extensions
