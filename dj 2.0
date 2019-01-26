@@ -1,3 +1,29 @@
 
 
 https://www.youtube.com/watch?v=08yYjLGWzaM&t=10s
+
+2:11 sudo apt-get update
+2:29 sudo apt-get -y upgrade
+2:43 UTF-8
+4:27 sudo apt-get -y install nginx
+4:53 sudo apt-get -y install supervisor
+5:39 sudo systemctl start supervisor
+6:07 sudo apt-get install mysql-server
+7:00 sudo mysql_secure_installation
+anypass y y y
+7:50 mysql -u root -p    //login into mysql
+got tired so i made a skip here
+14:42 sudo apt-get -y install python-virtualenv    //unsure why not using pip and this is probably using python 2.7 which is a problem
+15:03 adduser <nameofthenewuser>
+15:51 gpasswd -a <nameofthenewuser> sudo //add user to the list of sudo users
+16:09 su - <nameofthenewuser>  //switching to the new user
+timeskip
+21:27 pip3 install django-webpack-loader
+21:47 pip3 install pillow
+21:57 pip3 install django-cors-headers
+22:35 cd project
+python3 manage.py runserver  //didnt work, still mysql unconfigured
+22:43 pip3 install mysqlclient  //seems like this didnt work
+23:36 sudo apt-get install libmysqlclient-dev  //fixing with this
+23:49 pip3 install mysqlclient //trying again now
+23:58 python3 manage.py runserver //trying again with mysql configured﻿
