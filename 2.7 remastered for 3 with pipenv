@@ -27,8 +27,9 @@ cd tfn
 //no source venv/bin/activate
 pip3 install pipenv
 //error here, default pip seems to be upgraded or something
-https://scontent-mad1-1.xx.fbcdn.net/v/t1.0-9/50692594_2221895444741856_1238703778308292608_o.jpg?_nc_cat=107&_nc_eui2=AeGM1Pr_gxHyx039NUy0hD9Mr3RJFL0Gt-2ippsDM0fiFN2PB-A2dnUEqdFaAt-pTbWx937ykxl4dnwxA4yQ5f40nQSwjSd6NndkKverqVrH8g&_nc_ht=scontent-mad1-1.xx&oh=a12646defad9a12ce589e669ed60acd4&oe=5CF47972
-https://stackoverflow.com/questions/51225750/installation-of-pipenv-causes-pip3-unusable
+sample image  https://scontent-mad1-1.xx.fbcdn.net/v/t1.0-9/50692594_2221895444741856_1238703778308292608_o.jpg?_nc_cat=107&_nc_eui2=AeGM1Pr_gxHyx039NUy0hD9Mr3RJFL0Gt-2ippsDM0fiFN2PB-A2dnUEqdFaAt-pTbWx937ykxl4dnwxA4yQ5f40nQSwjSd6NndkKverqVrH8g&_nc_ht=scontent-mad1-1.xx&oh=a12646defad9a12ce589e669ed60acd4&oe=5CF47972
+someone had same issue https://stackoverflow.com/questions/51225750/installation-of-pipenv-causes-pip3-unusable
+would that answer work issue? https://stackoverflow.com/questions/54378879/pipenv-on-production-workaround-with-user-is-it-viable
 pipenv shell
 pip3 install -r requirements.txt
 pip3 install django bcrypt django-extensions
