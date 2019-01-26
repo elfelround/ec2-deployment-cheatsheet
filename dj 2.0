@@ -3,14 +3,15 @@
 https://www.youtube.com/watch?v=08yYjLGWzaM&t=10s
 
 
+//connects via ssh to instance
 2:11 sudo apt-get update
 2:29 sudo apt-get -y upgrade
 2:43 UTF-8
 4:27 sudo apt-get -y install nginx
-4:53 sudo apt-get -y install supervisor
+4:53 sudo apt-get -y install supervisor  // to monitor processes http://supervisord.org/
 5:39 sudo systemctl start supervisor
 6:07 sudo apt-get install mysql-server
-7:00 sudo mysql_secure_installation
+7:00 sudo mysql_secure_installation // improves security of mysql set a password for root etc   https://dev.mysql.com/doc/refman/5.7/en/mysql-secure-installation.html
 anypass y y y
 7:50 mysql -u root -p    //login into mysql
 got tired so i made a skip here
