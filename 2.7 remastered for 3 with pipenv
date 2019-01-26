@@ -16,9 +16,9 @@ Y
 
 sudo apt-get update
 //no sudo pip install virtualenv
-//unsafe package, change to a private package from bitbucket
-git clone https://github.com/mruanova/zillow.git
-cd zillow
+//unsafe package, changed to a private package from bitbucket
+git clone git clone https://Mr-Programs@bitbucket.org/Mr-Programs/tfn.git
+cd <projectname>
 //no virtualenv venv
 //no source venv/bin/activate
 pipenv shell
