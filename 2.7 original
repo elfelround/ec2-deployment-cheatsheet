@@ -1,6 +1,6 @@
 
 https://www.youtube.com/watch?v=QjrfUO91wfc&lc=z224xftorx2nylhzd04t1aokgkmc4yyiyolq5c1aectpbk0h00410.1548461727958684
-good tutorial a bit outdated https://www.digitalocean.com/community/tutorials/how-to-install-django-and-set-up-a-development-environment-on-ubuntu-16-04
+good tutorial a bit outdated, however only uses runserver, not gunicorn nginx etc https://www.digitalocean.com/community/tutorials/how-to-install-django-and-set-up-a-development-environment-on-ubuntu-16-04
 
 cd Downloads/
 mv zillows.pem ~/Desktop/
