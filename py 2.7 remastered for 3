@@ -1,6 +1,8 @@
 modified version of 
 https://www.youtube.com/watch?v=QjrfUO91wfc&lc=UgyEkE953qRsVATKRmp4AaABAg.8qWgnW-6vXu8qYSTIS-t4w
 
+//its confussing cause on my own project im using TFN on root and tfn on appname...
+
 cd Downloads/
 mv zillows.pem ~/Desktop/
 cd ..
@@ -35,8 +37,9 @@ pip3 install -r requirements.txt
 pip3 install django bcrypt django-extensions
 // this is a bit overkill, we have django already installed, what is django-extensions even for? do we need bcrypt for a hello world?
 //collection of custom extensions for the Django Framework
+//for my own hello world im gonna try without this packages first
 pip3 install gunicorn
-cd zillow
+cd TFN
 sudo vim settings.py
 
 
@@ -45,23 +48,30 @@ sudo vim settings.py
 i
 
 
-ALLOWED_HOSTS = ['13.59.206.93']
+ALLOWED_HOSTS = ['35.180.97.61']
+//use the public ip from the ec2.t2 instance
+//https://stackoverflow.com/questions/45194182/allowed-hosts-and-django
 
 # add the line below to the bottom of the file
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
-Save your changes and quit. ESC :wq
+Save your changes and quit. press> ESC write> :wq  press> ENTER
 
 cd .. 
 python manage.py collectstatic
-gunicorn --bind 0.0.0.0:8000 zillow.wsgi:application
+//interesting to remember that collectstatic wasnt done in dev cause runserver did it for us
+gunicorn --bind 0.0.0.0:8000 TFN.wsgi:application
+//use the root project name
 
+// so here if we go to the ip we get the nginx welcome but yet doesnt seem properly configured, even after shutting down gunicorn we get the same
 ctrl+c
 
+//interesting that we dont leave our current dir for this next edit
 sudo vim /etc/systemd/system/gunicorn.service
 
 i
+// will trigger insert into our vim so we can copy the next stuff
 
 [Unit]
 Description=gunicorn daemon
@@ -76,31 +86,35 @@ WantedBy=multi-user.target
 
 ESC :wq
 
+//interesting that we are using the default user ubuntu
+
+//we can copy this block all together onto the console
 sudo systemctl daemon-reload
 sudo systemctl start gunicorn
 sudo systemctl enable gunicorn
-sudo vim /etc/nginx/sites-available/zillow
+sudo vim /etc/nginx/sites-available/TFN
 
 i
 
 server {
   listen 80;
-  server_name 13.59.206.93;
+  server_name 35.180.97.61;
   location = /favicon.ico { access_log off; log_not_found off; }
   location /static/ {
-      root /home/ubuntu/zillow;
+      root /home/ubuntu/tfn;
   }
   location / {
       include proxy_params;
-      proxy_pass http://unix:/home/ubuntu/zillow/zillo...
+      proxy_pass http://unix:/home/ubuntu/tfn/tfn.sock;
   }
 }
 
 ESC :wq
+//remember to change the server name with the current server of the ec2
 
-sudo ln -s /etc/nginx/sites-available/zillow /etc/nginx/sites-enabled
+sudo ln -s /etc/nginx/sites-available/TFN /etc/nginx/sites-enabled
 sudo nginx -t
 sudo rm /etc/nginx/sites-enabled/default
 sudo service nginx restart
 
-http://13.59.206.93
+http://35.180.97.61
