@@ -1,3 +1,6 @@
+modified version of 
+https://www.youtube.com/watch?v=QjrfUO91wfc&lc=UgyEkE953qRsVATKRmp4AaABAg.8qWgnW-6vXu8qYSTIS-t4w
+
 cd Downloads/
 mv zillows.pem ~/Desktop/
 cd ..
@@ -97,6 +100,4 @@ sudo rm /etc/nginx/sites-enabled/default
 sudo service nginx restart
 
 http://13.59.206.93
-
-https://www.youtube.com/watch?v=QjrfUO91wfc&lc=UgyEkE953qRsVATKRmp4AaABAg.8qWgnW-6vXu8qYSTIS-t4w
 
