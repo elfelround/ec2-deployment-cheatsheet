@@ -26,6 +26,7 @@ virtualenv venv
 source venv/bin/activate
 pip install -r requirements.txt
 //https://github.com/mruanova/zillow/blob/master/requirements.txt
+//i was getting 502, perphaps some dependencies are missing as stated on a comment from the video saying "Successful.. I install some dependencies by original project "zillow". I was looking the requirements and install one by one and testing.. well.. voilá!!! I just install backports.functools-lru-cache, altgraph and virtualenv. It worked!!!﻿"
 pip install django bcrypt django-extensions
 pip install gunicorn
 cd zillow
