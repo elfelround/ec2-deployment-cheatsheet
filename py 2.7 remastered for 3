@@ -31,7 +31,10 @@ source venv/bin/activate
 //pip3 install pipenv
 //pipenv shell
 pip3 install -r requirements.txt
+//pip freeze    django 2 & pytz
 pip3 install django bcrypt django-extensions
+// this is a bit overkill, we have django already installed, what is django-extensions even for? do we need bcrypt for a hello world?
+//collection of custom extensions for the Django Framework
 pip3 install gunicorn
 cd zillow
 sudo vim settings.py
