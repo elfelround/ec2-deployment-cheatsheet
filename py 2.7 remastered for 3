@@ -13,6 +13,7 @@ ssh
 yes
 
 sudo apt-get update
+//saw someone do a upgrade too >> apt-get upgrade actually installs newer versions of the packages you have
 sudo apt-get install python3-pip python3-dev nginx git
 //try without python3-distutils and if it doesnt work try with it
 
