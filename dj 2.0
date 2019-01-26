@@ -27,3 +27,10 @@ python3 manage.py runserver  //didnt work, still mysql unconfigured
 23:36 sudo apt-get install libmysqlclient-dev  //fixing with this
 23:49 pip3 install mysqlclient //trying again now
 23:58 python3 manage.py runserver //trying again with mysql configured﻿
+25:55 pip uninstall gunicorn // uninstalls cause he put it onto python 2.7
+26:32 pip3 install gunicorn --install-option"--install-scripts=$PWD/bin"  //extra argument cause he wants it installed in a specific directory that he is in
+27:01 cd ..
+27:02 // he fucked up a 3rd time, making the gunicorn installation on the project folder when he wanted it in root, so he installs it again after the c ..
+27:03 // again installing gunicorn
+
+
