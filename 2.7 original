@@ -80,7 +80,7 @@ server {
   }
   location / {
       include proxy_params;
-      proxy_pass http://unix:/home/ubuntu/zillow/zillo...
+      proxy_pass http://unix:/home/ubuntu/zillow/zillo.sock;
   }
 }
 
