@@ -73,6 +73,7 @@ timeskip
 42:46 python manage.py migrate
 43:04 python manage.py collectstatic  /fails cause static dir isnt made
 42:23 mkdir static_store // after runs collectstatic again
+*some missing commands*
 
 second part https://www.youtube.com/watch?v=15d6jdniYN8
 
