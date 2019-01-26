@@ -17,8 +17,9 @@ Y
 sudo apt-get update
 //no sudo pip install virtualenv
 //unsafe package, changed to a private package from bitbucket
-git clone git clone https://Mr-Programs@bitbucket.org/Mr-Programs/tfn.git
-cd <projectname>
+git clone https://Mr-Programs@bitbucket.org/Mr-Programs/tfn.git
+//cd <projectname>
+cd tfn
 //no virtualenv venv
 //no source venv/bin/activate
 pipenv shell
