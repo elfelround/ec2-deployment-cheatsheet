@@ -1,3 +1,6 @@
+modified version of 
+https://www.youtube.com/watch?v=QjrfUO91wfc&lc=UgyEkE953qRsVATKRmp4AaABAg.8qWgnW-6vXu8qYSTIS-t4w
+
 cd Downloads/
 mv zillows.pem ~/Desktop/
 cd ..
@@ -11,18 +14,24 @@ yes
 
 sudo apt-get update
 sudo apt-get install python3-pip python3-dev nginx git
+//try without python3-distutils and if it doesnt work try with it
 
 Y
 
 sudo apt-get update
 sudo pip3 install virtualenv
-git clone https://github.com/mruanova/zillow.git
-cd zillow
+//no sudo pip3 install pipenv
+//unsafe package, changed to a private package from bitbucket
+git clone https://Mr-Programs@bitbucket.org/Mr-Programs/tfn.git
+//cd <projectname>
+cd tfn
 virtualenv venv
 source venv/bin/activate
-pip install -r requirements.txt
-pip install django bcrypt django-extensions
-pip install gunicorn
+//pip3 install pipenv
+//pipenv shell
+pip3 install -r requirements.txt
+pip3 install django bcrypt django-extensions
+pip3 install gunicorn
 cd zillow
 sudo vim settings.py
 
@@ -91,6 +100,3 @@ sudo rm /etc/nginx/sites-enabled/default
 sudo service nginx restart
 
 http://13.59.206.93
-
-https://www.youtube.com/watch?v=QjrfUO91wfc&lc=UgyEkE953qRsVATKRmp4AaABAg.8qWgnW-6vXu8qYSTIS-t4w
-
