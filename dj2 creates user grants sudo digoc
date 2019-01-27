@@ -1,0 +1,26 @@
+https://www.youtube.com/watch?v=Sa_kQheCnds
+
+12:19 hostnamectl set-hostname <what-ever>  //hostname to check
+12:52 nano ect/hosts //setting host name in host file //writing ip address of our server, same we use for ssh
+13:49 666.666.666 +TAB <servername>
+14:27 adduser  <whatevername> // limited user
+15:21 adduser <whatevername> sudo // ading sudo group so it can actually use sudo command (yet not execute sudo by default)
+exit
+15:51 ssh root@... > ssh <limiteduser>@... //ssh logout and login back with new limited user
+18:29 mkdir  ~/.ssh // starting to create keyfiles loging instead of password for ssh
+//timeskip making sshkeys
+26:57 sudo apt-get install ufw  **firewall starts here
+27:22 sudo ufw default allow outgoing
+ sudo ufw default deny incoming // can lock you out if not ssh specified!
+sudo ufw allow ssh
+28:11 sudo ufw allow 8000
+28:40 sudo ufw enable // enabling rules
+30:20 source <path>  // activating environment, also comments he made a requirements.txt for the environment
+pip freeze
+pip freeze > requirements.txt
+33:38 scp -r <folder> <user>@<ip>:<path of destination pe:~/> //copying project with bash, mentions alternatives git or filezilla
+**starts with venv etc
+34:58 sudo apt-get python3-pip python3-venv
+36:05 python3 -m venv <folder destination>/<nameovenv>    //creating venv in a specific location with py3 interpreter
+36:43 source venv/bin/activate // made a cd first
+37:13 pip install -r (expected requirements) requirements.txt
