@@ -1,6 +1,6 @@
 https://www.youtube.com/watch?v=Sa_kQheCnds
 
-12:19 hostnamectl set-hostname <what-ever>  //hostname to check
+12:19 hostnamectl set-hostname <what-ever>  //hostname to check why needed: https://www.youtube.com/redirect?stzid=UgzEGCnUfv1hYlurmjp4AaABAg.8qcG74-5s7k8qcLmDRWslR&q=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F38560196%2Fwhy-do-you-need-to-change-the-hostname-of-your-ec2-instance&event=comments&redir_token=-duGMPPlZ84_G_NK8hYfqNsnymJ8MTU0ODcxMjM5NEAxNTQ4NjI1OTk0
 12:52 nano ect/hosts //setting host name in host file //writing ip address of our server, same we use for ssh
 13:49 666.666.666 +TAB <servername>
 14:27 adduser  <whatevername> // limited user
