@@ -43,4 +43,23 @@ ls  //all of these are config files, we will select one and copy to .conf
 50:45 Directory  Files wsgi.py   Require all granted  //granting access to wsgi
 52:23 WSGIScriptAlias /(indicates rooturl) /home/username/projectname/projectname/wsgi.py (wsgi path)
 52:36 WSGIDaemonProcess ....
+timeskip
+56:15 sudo chown :www-data(this is the apacheuser) <projectname>/db.sqlite3 // granting priviledges to apache so it changes db
+sudo chmod 664 <projectname>/db.sqlite3 (owner group everyone)
+57:21 sudo chown :www-data(this is the apacheuser) <projectname>/
+ls -la   //see permissions
+58:00 sudo chown -R(for recursive) :www-data django_project/media/
+58:44 sudo chmod -R 775 django_project/media/
+59:11 // mentions we wont be using env vars cause apache is shit at it, we will be using config.json instead
+sudo touch /etc/config.json  // can add inbetween folder in case we have several apps
+1:00:19 sudo nano to settings.py grab secret key
+1:01:39 editing the config.json to have the secret key we took, also putting EMAIL_USER eMAIL_PASS
+1:03:30 import json with open('etc/...') json.load // and loading json
+1:05:18 DEBUG = False
+1:05:58 changing os.environ.get for config.get
+timeskip
+1:12:55 sudo chmod 775 django_project/   //our parent dir to db didnt have group write perms and was conflicting writing of crud
+sudo service apache2 restart  //now crud works
+1:16:03 // recommending django deployment checklist url
+
 
