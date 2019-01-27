@@ -1,0 +1,4 @@
+first huge diference with ec2 is it uses what they call security groups as a firewall, when you set an ec2 you easily see it on the init wizard step 6
+
+
+https://serverfault.com/questions/884156/difference-between-security-groups-on-aws-and-iptables
