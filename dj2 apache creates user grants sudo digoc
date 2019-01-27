@@ -24,3 +24,23 @@ pip freeze > requirements.txt
 36:05 python3 -m venv <folder destination>/<nameovenv>    //creating venv in a specific location with py3 interpreter
 36:43 source venv/bin/activate // made a cd first
 37:13 pip install -r (expected requirements) requirements.txt
+38:38 changes ALLOWED_HOSTS and puts our server ip
+39:20 STATIC_ROOT os.path.join(BASE_DIR... // since dj handles static dif in production
+40:07 python manage.py collectstatic // also makes our static folder
+40:48 python manage.py runserver 0.0.0.0:8000 // runserver for dev, crud seems to work
+43:48 // reset pasword testing fails since we havent copied venv with emailserver and password, i guess he means env variables
+44:25 // killing server
+cd
+45:28 sudo apt-get apache2
+45:55 sudo apt-get libapache2-mod-wsgi-py3
+46:15 cd /etc/apache2/sites-available/    // configuring apache server
+ls  //all of these are config files, we will select one and copy to .conf
+46:55 sudo cp 000-default.conf django_project.conf  // using a copy of the default configuration file
+47:25  django_project.conf //edit to where it it meets our need
+48:12 Alias /static /home/<username>/<project>/static    // using alias to tell apache to map requests with static to our static folder
+49:22 <Directory ...
+49:45 // same with media
+50:45 Directory  Files wsgi.py   Require all granted  //granting access to wsgi
+52:23 WSGIScriptAlias /(indicates rooturl) /home/username/projectname/projectname/wsgi.py (wsgi path)
+52:36 WSGIDaemonProcess ....
+
