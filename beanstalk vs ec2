@@ -1,0 +1,3 @@
+beanstalk adds a lot of aws products on top of an ec2, some of which cost money even if on free trial (s3 & load balancers)
+
+the free tier of ec2 is ec2.t2 which has just 1 core
