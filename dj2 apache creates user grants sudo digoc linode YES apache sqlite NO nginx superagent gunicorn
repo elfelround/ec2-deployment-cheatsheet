@@ -4,6 +4,8 @@ https://www.youtube.com/watch?v=Sa_kQheCnds
 12:52 nano ect/hosts //setting host name in host file //writing ip address of our server, same we use for ssh
 13:49 666.666.666 +TAB <servername>
 14:27 adduser  <whatevername> // limited user
+// adduser OR gpasswd? adduser is distro specific and usses gpasswd under the hood https://unix.stackexchange.com/questions/198536/difference-between-adding-sudo-user-with-adduser-or-gpasswd
+// gpasswd used here https://simpleisbetterthancomplex.com/tutorial/2016/10/14/how-to-deploy-to-digital-ocean.html
 15:21 adduser <whatevername> sudo // ading sudo group so it can actually use sudo command (yet not execute sudo by default)
 exit
 15:51 ssh root@... > ssh <limiteduser>@... //ssh logout and login back with new limited user
