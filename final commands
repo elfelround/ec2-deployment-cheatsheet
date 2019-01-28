@@ -1,0 +1,19 @@
+// from dj2 apache creates user grants sudo digoc linode YES apache sqlite NO nginx superagent
+
+hostnamectl set-hostname <what-ever>
+nano ect/hosts
+
+some tutorials create an user as soon as they ssh to the server, but they are somehow connected as root. in ec2 is kinda different since it connects as ubuntu user, this is kind of confusing, should i create a new user (which they recommend for when connecting through root) and grant sudo group priviledges? or would this be overkill? 
+
+adduser  <whatevername> 
+adduser <whatevername> sudo
+
+
+//
+
+
+
+
+
+
+
