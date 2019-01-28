@@ -21,7 +21,7 @@ sudo apt-get install ufw
 sudo ufw default allow outgoing
 sudo ufw default deny incoming
 sudo ufw allow 22  // allowo ssh didnt work still havent tried OpenSSH
-sudo ufw allow 80  // remember to open 443 for default https later on
+sudo ufw allow 80
 sudo ufw enable
 sudo reboot
 
@@ -32,7 +32,7 @@ git clone
 timeskip
 
 
-sudo ufw allow ‘Nginx Full’
+sudo ufw allow ‘Nginx Full’  // opens 80 and 443 https
 
 
 
