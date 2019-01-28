@@ -1,0 +1,8 @@
+CELERYD_NODES="{{ inventory_hostname }}"
+CELERY_BIN="{{ app_dir }}/bin/celery"
+CELERY_APP="qsv"
+CELERYD_MULTI="multi"
+CELERYD_OPTS="-Q qsv   --time-limit=36000 --soft-time-limit=36000 --concurrency=2 -E --statedb={{ app_dir }}/var/worker_qsv.state -n qsv.%h"
+CELERYD_PID_FILE="{{ app_dir }}/run/celery_qsv_%n.pid"
+CELERYD_LOG_FILE="{{ app_dir }}/log/celery_qsv_%n%I.log"
+CELERYD_LOG_LEVEL="INFO"
