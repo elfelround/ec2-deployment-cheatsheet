@@ -5,25 +5,34 @@ Step 7: Create a new pair > download
 
 // from dj2 apache creates user grants sudo digoc linode YES apache sqlite NO nginx superagent
 
+sudo apt-get update
+sudo apt-get -y upgrade
+
+sudo apt-get -y install supervisor  // can jump into venv files and run stuff from inside them (celery)
+
 hostnamectl set-hostname <what-ever>
 nano ect/hosts
 adduser  <whatevername> 
-adduser <whatevername> sudo
+adduser <whatevername> sudo  // or gpasswd -a whatevername sudo          su - whatevername (switch to recently created user)
 
 ssh root@... > ssh <limiteduser>@... //ssh logout and login back with the command we previously used changing ubuntu for the new name
 
 sudo apt-get install ufw 
 sudo ufw default allow outgoing
 sudo ufw default deny incoming
-sudo ufw allow ssh
+sudo ufw allow 22  // allowo ssh didnt work still havent tried OpenSSH
 sudo ufw allow 80
 sudo ufw enable
+sudo reboot
 
-//test, check if i can log out and back in with ssh
+timeskip
 
-//
+sudo apt-get -y install git
+git clone
+timeskip
 
 
+sudo ufw allow ‘Nginx Full’
 
 
 
