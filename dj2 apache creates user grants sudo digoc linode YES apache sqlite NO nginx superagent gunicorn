@@ -13,14 +13,15 @@ ssh keys making***
 26:57 sudo apt-get install ufw  **firewall starts here
 27:22 sudo ufw default allow outgoing
  sudo ufw default deny incoming // can lock you out if not ssh specified!
-sudo ufw allow ssh
+sudo ufw allow ssh //even with this i was locked out, had to add port 20
 28:11 sudo ufw allow 8000
 28:40 sudo ufw enable // enabling rules
+-on local
 30:20 source <path>  // activating environment, also comments he made a requirements.txt for the environment
 pip freeze
 pip freeze > requirements.txt
 33:38 scp -r <folder> <user>@<ip>:<path of destination pe:~/> //copying project with bash, mentions alternatives git or filezilla
-**starts with venv etc
+**on remote starts with venv etc
 34:58 sudo apt-get python3-pip python3-venv
 36:05 python3 -m venv <folder destination>/<nameovenv>    //creating venv in a specific location with py3 interpreter
 36:43 source venv/bin/activate // made a cd first
