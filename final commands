@@ -10,6 +10,16 @@ nano ect/hosts
 adduser  <whatevername> 
 adduser <whatevername> sudo
 
+ssh root@... > ssh <limiteduser>@... //ssh logout and login back with the command we previously used changing ubuntu for the new name
+
+sudo apt-get install ufw 
+sudo ufw default allow outgoing
+sudo ufw default deny incoming
+sudo ufw allow ssh
+sudo ufw allow 80
+sudo ufw enable
+
+//test, check if i can log out and back in with ssh
 
 //
 
