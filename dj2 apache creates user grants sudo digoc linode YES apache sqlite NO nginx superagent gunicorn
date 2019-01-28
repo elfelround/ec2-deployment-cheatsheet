@@ -7,6 +7,7 @@ https://www.youtube.com/watch?v=Sa_kQheCnds
 15:21 adduser <whatevername> sudo // ading sudo group so it can actually use sudo command (yet not execute sudo by default)
 exit
 15:51 ssh root@... > ssh <limiteduser>@... //ssh logout and login back with new limited user
+ssh keys making***
 18:29 mkdir  ~/.ssh // starting to create keyfiles loging instead of password for ssh
 //timeskip making sshkeys
 26:57 sudo apt-get install ufw  **firewall starts here
