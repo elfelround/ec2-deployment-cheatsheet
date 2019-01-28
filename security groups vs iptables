@@ -2,3 +2,6 @@ first huge diference with ec2 is it uses what they call security groups as a fir
 
 
 https://serverfault.com/questions/884156/difference-between-security-groups-on-aws-and-iptables
+
+query? do i need to open 8000 on secure groups? or just on ufw? I can test this by running runserver with nginx first with only 80
+open on securegroups and 8000 open on ufw and then with 8000 open on both
