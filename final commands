@@ -29,14 +29,28 @@ sudo reboot
 timeskip
 
 sudo apt-get -y install git
-git clone
+export SITENAME=ericktestforasite.com    //so we will be making a root folder with the name of the site and putting the code on the source folder
+git clone https://adfasdfasdf.git \
+~/sites/$SITENAME/source
+
 timeskip
 
 sudo apt-get -y install nginx
 sudo systemctl start nginx
 sudo ufw allow ‘Nginx Full’  // opens 80 and 443 https
 
+sudo apt install python3 python3-venv
+pwd  // what dir are we in?
+//example output of pwd   /home/espeth/sites/staging.superlists.com/source    //we want to create the venv paralell but outside to source, so make sure to cd to the root or just use ../to go up one lvl
+python3(or python3.6) -m venv ../virtualenv   //setting the route where we will make virtualenv
+../virtualenv/bin/pip install -r requirements.txt  //we are calling the pip (not pip3 or whatever, just pip) inside the virtualenv instead of executing the virtual environment
+//will install django and not much more
 
 
+//Creating a virtualenv “manually” (i.e., without virtualenvwrapper ) involves using
+the standard library “venv” module, and specifying the path you want the virtualenv
+to go in sudo apt-get install python3.6 python3.6-venv  elspeth@server:$ python3.6 -m venv ../virtualenv
+
+git pull // to pull new changes from the server
 
 
