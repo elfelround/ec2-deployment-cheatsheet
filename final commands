@@ -83,6 +83,23 @@ proxy_pass http://unix:/tmp/superlists-staging.ottg.eu.socket;
 
 179 systemd
 
+/etc/systemd/system/   <whatever>    .service  // must live on this folder and have this suffix
+
+    [Unit]
+    Description=Gunicorn server for superlists-staging.ottg.eu
+    [Service]
+    Restart=on-failure
+    User=elspeth
+    WorkingDirectory=/home/elspeth/sites/superlists-staging.ottg.eu/source
+    ExecStart=/home/elspeth/sites/superlists-staging.ottg.eu/virtualenv/bin/gunicorn \
+    --bind unix:/tmp/superlists-staging.ottg.eu.socket \
+    superlists.wsgi:application
+    [Install]
+    WantedBy=multi-user.target
+
+sudo systemctl daemon-reload
+
+
 //Creating a virtualenv “manually” (i.e., without virtualenvwrapper ) involves using
 the standard library “venv” module, and specifying the path you want the virtualenv
 to go in sudo apt-get install python3.6 python3.6-venv  elspeth@server:$ python3.6 -m venv ../virtualenv
