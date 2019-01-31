@@ -1,13 +1,14 @@
-p188, missing indentation
+p182
 
 server {
-listen 80;
-server_name SITENAME;
-location /static {
-alias /home/elspeth/sites/SITENAME/static;
-}
-location / {
-proxy_set_header Host $host;
-proxy_pass http://unix:/tmp/SITENAME.socket;
-}
+  listen 80;
+  server_name SITENAME;
+  
+  location /static {
+    alias /home/elspeth/sites/SITENAME/static;
+  }
+  location / {
+    proxy_set_header Host $host;
+    proxy_pass http://unix:/tmp/SITENAME.socket;
+  }
 }
