@@ -46,6 +46,42 @@ python3(or python3.6) -m venv ../virtualenv   //setting the route where we will 
 ../virtualenv/bin/pip install -r requirements.txt  //we are calling the pip (not pip3 or whatever, just pip) inside the virtualenv instead of executing the virtual environment
 //will install django and not much more
 
+../virtualenv/bin/pip install gunicorn // TDD py 175
+../virtualenv/bin/gunicorn <whateverproject>.wsgi:application  //callin the application function from within the wsgi file from within the venv gunicorn (without actually activating venv)
+//at this point all CSS is broken, runserver serves static but gunicorn doesnt, its time to tell nginx to do that
+
+../virtualenv/bin/python manage.py collectstatic --noinput
+ls ../static/
+
+nginx>> //adding location /static to the config 177
+
+server {
+listen 80;
+server_name superlists-staging.ottg.eu;
+location /static {
+alias /home/elspeth/sites/superlists-staging.ottg.eu/static;
+}
+location / {
+proxy_pass http://localhost:8000;
+}
+}
+-------
+
+sudo systemctl reload nginx
+../virtualenv/bin/gunicorn superlists.wsgi:application
+
+proxy settings in Nginx so we can test and production same time
+
+
+[...]
+location / {
+proxy_set_header Host $host;
+proxy_pass http://unix:/tmp/superlists-staging.ottg.eu.socket;
+}
+}
+
+
+179 systemd
 
 //Creating a virtualenv “manually” (i.e., without virtualenvwrapper ) involves using
 the standard library “venv” module, and specifying the path you want the virtualenv
