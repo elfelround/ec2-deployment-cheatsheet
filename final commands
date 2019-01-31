@@ -1,6 +1,7 @@
 Step 6: Configure Security Group
 SSH > Source > my IP
-add HTTP & HTTPS > Source > Anywhere
+add HTTP & HTTPS > Source > Anywhere  //On AWS, for example, you may need to con‐
+figure the “security group” for your server to open port 80
 Step 7: Create a new pair > download
 
 // from dj2 apache creates user grants sudo digoc linode YES apache sqlite NO nginx superagent
@@ -31,7 +32,8 @@ sudo apt-get -y install git
 git clone
 timeskip
 
-
+sudo apt-get -y install nginx
+sudo systemctl start nginx
 sudo ufw allow ‘Nginx Full’  // opens 80 and 443 https
 
 
