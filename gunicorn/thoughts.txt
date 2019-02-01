@@ -1,0 +1,8 @@
+
+
+
+seems like daemon is run from within its passed properties, make sure it has that
+
+link the recommended formula of workers 2n+1 from the documentation and the command used to calculate these cores from within
+
+write the final config I will be using here
