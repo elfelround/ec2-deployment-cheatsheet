@@ -9,10 +9,13 @@ Step 7: Create a new pair > download
 sudo apt-get update
 sudo apt-get -y upgrade
 
-sudo apt-get -y install supervisor  // can jump into venv files and run stuff from inside them (celery)
+//sudo apt-get -y install supervisor  //we will be using systemd instead //can jump into venv files and run stuff from inside them (celery)
 
 hostnamectl set-hostname <what-ever>
 nano ect/hosts
+// add here the hosts changes
+
+
 adduser  <whatevername> 
 adduser <whatevername> sudo  // or gpasswd -a whatevername sudo          su - whatevername (switch to recently created user)
 
