@@ -1,0 +1,25 @@
+https://medium.com/@dwernychukjosh/setting-up-nginx-gunicorn-celery-redis-supervisor-and-postgres-with-django-to-run-your-python-73c8a1c8c1ba
+
+///
+
+[Unit]
+Description=gunicorn daemon
+After=network.target
+[Service]
+User=ubuntu
+Group=www-data
+Environment=ENVIRONMENT_VARIABLE=var
+WorkingDirectory=/home/ubuntu/proj
+ExecStart=/home/ubuntu/proj/virtualenv/bin/gunicorn \
+ — access-logfile — \
+ — log-level debug \
+ — workers 3 \
+ — bind unix:/home/ubuntu/proj.sock \
+ proj.wsgi:application
+[Install]
+WantedBy=multi-user.target
+
+///
+
+sudo systemctl daemon-reload
+sudo systemctl start gunicorn
