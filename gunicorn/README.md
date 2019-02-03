@@ -7,9 +7,12 @@ Through flags on command, through systemd .service and through a configuration .
 
 I am overhelmed and was wondering which is the best way to set the gunicorn number of workers
 
+If you are used to it, flags in command line is the best bet, however, configuration .py file will keep things more organized.
+There is no best, there is what suits you more.
 
 
 
+-----
 
 
 
