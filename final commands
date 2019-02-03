@@ -11,16 +11,41 @@ sudo apt-get -y upgrade
 
 //sudo apt-get -y install supervisor  //we will be using systemd instead //can jump into venv files and run stuff from inside them (celery)
 
-hostnamectl set-hostname <what-ever>
-nano ect/hosts
+//hostnamectl set-hostname <what-ever> // we will be avoiding this step for the t2 test since we will only be hosting one site with no dns to start with
+//nano ect/hosts
 // add here the hosts changes
 
 
-adduser  <whatevername> 
-adduser <whatevername> sudo  // or gpasswd -a whatevername sudo          su - whatevername (switch to recently created user)
+sudo adduser  erick  --disabled-password  //tried without disabled password to see if i could ssh with password but could not, still asking public key
+sudo adduser erick sudo  // or gpasswd -a whatevername sudo          su - whatevername (switch to recently created user)
+// REMEMBER TO ADD SUDO GROUP TO NEW USER BEFORE SWITCHING
 
-ssh root@... > ssh <limiteduser>@... //ssh logout and login back with the command we previously used changing ubuntu for the new name
+**REMOVING UBUNTU USER, SETTING NEW USER AS DEFAULT**
+                // at this point it would be a good idea to remove the ubuntu user // errors cause its running systemd process, and when killed processes and deleted user you cant long onto new user cause u havent set the .ssh key yet
+                sudo su -
+                sudo pkill -u ubuntu
+                userdel -r ubuntu
 
+                ssh -i "test2.pem" erick@ec2-35-180-92-171.eu-west-3.compute.amazonaws.com //permission denied public key
+
+                sudo su - <whatevername> // switching to the newly created user
+                -------https://aws.amazon.com/premiumsupport/knowledge-center/new-user-accounts-linux-instance/
+                cd
+                mkdir .ssh  // adding the key 
+                chmod 700 .ssh
+                cd
+                touch .ssh/authorized_keys
+                chmod 600 .ssh/authorized_keys
+                -----
+
+                on desktop console, not server**
+                ssh-keygen -y -f /path_to_key_pair/my-key-pair.pem  //retrieving the key from the desktop downloaded file, i think it would be easier to just copy it from the ubuntu user to the erick user
+
+
+                ssh root@... > ssh <limiteduser>@... //ssh logout and login back with the command we previously used changing ubuntu for the new name
+                //2014 tuto on changing default ubuntu user https://alestic.com/2014/01/ec2-change-username/
+
+**FIREWALL**
 sudo apt-get install ufw 
 sudo ufw default allow outgoing
 sudo ufw default deny incoming
@@ -32,9 +57,10 @@ sudo reboot
 timeskip
 
 sudo apt-get -y install git
-export SITENAME=ericktestforasite.com    //so we will be making a root folder with the name of the site and putting the code on the source folder
-git clone https://adfasdfasdf.git \
-~/sites/$SITENAME/source
+// export SITENAME=ericktestforasite.com    //so we will be making a root folder with the name of the site and putting the code on the source folder
+// git clone https://adfasdfasdf.git \
+// ~/sites/$SITENAME/source
+git clone https://Mr-Programs@bitbucket.org/Mr-Programs/tfn.git
 
 timeskip
 
